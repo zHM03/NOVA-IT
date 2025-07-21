@@ -1,0 +1,87 @@
+<HoverButton@Button>:
+    background_normal: ""
+    background_color: 0.2, 0.3, 0.7, 1
+    color: 1, 1, 1, 1
+    font_size: 18
+    size_hint_y: None
+    height: "50dp"
+    size_hint_x: 1
+    canvas.before:
+        Color:
+            rgba: self.background_color
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<AsistanEkrani>:
+    orientation: "horizontal"
+    padding: 20
+    spacing: 30
+
+    BoxLayout:
+        orientation: "vertical"
+        size_hint_x: 0.35
+        spacing: 15
+
+        HoverButton:
+            text: "Nefes Egzersizi"
+            on_release: root.yazili_girdi_isle("Nefes egzersizi")
+
+        HoverButton:
+            text: "Saat"
+            on_release: root.yazili_girdi_isle("Saat kaç")
+
+        HoverButton:
+            text: "Temizle"
+            on_release: root.yazili_girdi_isle("Geçici dosyaları temizle")
+
+        HoverButton:
+            text: "Hava Durumu"
+            on_release: root.yazili_girdi_isle("Hava durumu")
+            
+        HoverButton:
+            text: "Hatırlatıcı Kur"
+            on_release: root.hatirlatici_popup_ac()
+            
+        HoverButton:
+            text: "Hesap Makinesi"
+            on_release: root.hesap_makinesi_popup_ac()
+
+        HoverButton:
+            text: "Bilgisayarı Zamanlı Kapat"
+            on_release: root.kapatma_popup_ac()
+            
+        Widget:
+
+    FloatLayout:
+        size_hint_x: 0.65
+
+        Label:
+            id: baslik
+            text: "H.A.I.S.O"
+            font_size: 36
+            bold: True
+            color: 0.2, 0.3, 0.7, 1
+            size_hint: None, None
+            size: self.texture_size
+            pos: 480, 530
+
+        Label:
+            id: kullanici_label
+            text: root.kullanici_metni
+            font_size: 24
+            color: 1, 1, 1, 1
+            size_hint: None, None
+            size: self.texture_size
+            pos_hint: {"center_x": 0.4}
+            y: 350  # Sabit yukarıda
+
+        Label:
+            id: cevap_label
+            text: root.cevap
+            font_size: 24
+            color: 1, 1, 1, 1
+            size_hint: None, None
+            size: self.texture_size
+            pos_hint: {"center_x": 0.4}
+            y: kullanici_label.y - self.height - 50
