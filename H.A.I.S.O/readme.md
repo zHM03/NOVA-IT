@@ -1,0 +1,1 @@
+H.A.I.S.O programı kullanıcı dostu arayüzle saat, tarih, hava durumu, hatırlatıcı, nefes egzersizi, hesap makinesi, geçici dosya temizleme ve bilgisayar kapatma gibi özellikler sunmaktadır.
